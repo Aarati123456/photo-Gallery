@@ -1,1 +1,46 @@
-<h1> This is it</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            list-style: none;
+            padding: 0;
+        }
+        .product-item{
+            flex: 1;
+            max-width: 30;
+              margin: 10px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+    </style>
+
+          
+        
+</head>
+<body>
+    <h1>Image gallery</h1>
+    <ul>
+        {% for product in products %}
+        <li>
+            <a href="#">
+            <img src="{{product.image.url}}" alt="{{product.name}}">
+            </a>
+            <h2>{{ product.name }}</h2>
+            <p>{{ product.description}}</p>
+
+        </li>
+        {%endfor%}
+    </ul>
+
+
+    
+</body>
+</html>
